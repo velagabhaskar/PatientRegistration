@@ -1,0 +1,68 @@
+<div class="container">
+<mat-card >
+  <mat-card-title>Register</mat-card-title>
+  <mat-label>{{message}}</mat-label>
+<form class="example-form" [formGroup]="patientForm" (ngSubmit)="onSubmit()">
+ <div class="row" >
+  <mat-form-field class="col-md-5"  fxLayout.xl="column" fxLayoutAlign="space-between center">
+    <input matInput placeholder="Fist Name"   formControlName="firstName">
+    <mat-error *ngIf="patientForm.get('firstName')?.hasError('required') || patientForm.get('firstName')?.touched">
+    Please enter the first name
+    </mat-error>
+  </mat-form-field>
+
+</div>
+<div class="row" >
+  <mat-form-field class="col-md-5"  fxLayout.xs="column" fxLayoutAlign="space-between center">
+    <input matInput placeholder="Last Name"   formControlName="lastName">
+    <mat-error *ngIf="patientForm.get('lastName')?.hasError('required') || patientForm.get('lastName')?.touched">
+      Please enter the first name
+      </mat-error>
+  </mat-form-field>
+</div>
+<div class="row" >
+  <mat-form-field class="col-md-5"  >
+  
+  <input matInput [matDatepicker]="picker"  placeholder="Date of Birth"   formControlName="dateofBirth"   minAge="18" >
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error *ngIf="patientForm.get('dateofBirth')?.hasError('required') && patientForm.get('dateofBirth')?.touched ">
+    Please enter the Date of Birth
+    </mat-error>
+      <mat-error *ngIf="patientForm.get('dateofBirth')?.hasError">
+  Minimum age 18
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<div class="row" >
+  <div >
+    <mat-form-field class="col-md-5"  >
+      <input matInput type="email" placeholder="Email" formControlName="emailId">
+     
+      <mat-error *ngIf="patientForm.get('emailId')?.hasError('required') || patientForm.get('emailId')?.touched">
+        Please enter the Valid Email
+        </mat-error>
+      
+    </mat-form-field>
+
+  
+  </div>
+  <div class="row col-md-2" >
+    <button mat-raised-button color="primary" type="submit">Register</button>
+  </div>
+  <div class="row col-md-2 col-md-pull-2" >
+    <button mat-raised-button type="button" (click)="onCancel()">Cancel</button>
+  </div>
+
+</div>
+  
+
+
+</form>
+
+
+</mat-card>
+</div>
+

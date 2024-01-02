@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Delete Confirmation</h1>
+<div mat-dialog-content>
+  Are you sure you want to delete "{{ data.name }}"?
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button class="primary" (click)="onNoClick()">No</button>
+  <button mat-button (click)="onYesClick(data.id )">Yes</button>
+</div>

@@ -1,0 +1,67 @@
+
+<div class="container center">
+<mat-card  >
+    <mat-card-title>Edit</mat-card-title>
+  
+  <form fxLayout="column" fxLayoutAlign="center center" class="example-form" [formGroup]="patientForm">
+   <div class="row" >
+    <mat-form-field class="col-md-5"  fxLayout.xl="column" fxLayoutAlign="space-between center">
+      <input matInput placeholder="Fist Name"   formControlName="firstName">
+      <mat-error *ngIf="patientForm.get('firstName')?.hasError('required') || patientForm.get('firstName')?.touched">
+      Please enter the first name
+      </mat-error>
+    </mat-form-field>
+  
+  </div>
+  <div class="row" >
+    <mat-form-field class="col-md-5"  fxLayout.xs="column" fxLayoutAlign="space-between center">
+      <input matInput placeholder="Last Name"   formControlName="lastName">
+      <mat-error *ngIf="patientForm.get('lastName')?.hasError('required') || patientForm.get('lastName')?.touched">
+        Please enter the first name
+        </mat-error>
+    </mat-form-field>
+  </div>
+  <div class="row" >
+    <mat-form-field class="col-md-5"  fxLayout.xs="column" fxLayoutAlign="space-between center">
+    
+    <input matInput [matDatepicker]="picker"  placeholder="Date of Birth"   formControlName="dateofBirth" AgeCalculator>
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="patientForm.get('dateofBirth')?.hasError('required') || patientForm.get('dateofBirth')?.touched ">
+      Please enter the Date of Birth
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="row" >
+    <div fxLayout="row" fxLayout.xs="row" fxLayoutAlign="space-between center">
+      <mat-form-field class="example-half-width">
+        <input matInput type="email" placeholder="Email" formControlName="emailId">
+       
+        <mat-error *ngIf="patientForm.get('emailId')?.hasError('required') || patientForm.get('emailId')?.touched">
+          Please enter the Valid Email
+          </mat-error>
+        
+      </mat-form-field>
+  
+    
+    </div>
+    <div class="row col-md-3" >
+      <button mat-raised-button color="primary" (click)="save()">Update</button>
+    </div>
+    <div class="row col-md-3" >
+        <button mat-raised-button  (click)="Cancel()">Cancel</button>
+      </div>
+  
+  </div>
+    
+  
+  
+  </form>
+  
+  
+</mat-card>
+</div>
+
+  

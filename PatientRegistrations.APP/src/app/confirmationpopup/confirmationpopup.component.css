@@ -1,0 +1,49 @@
+/* custom-dialog.component.css */
+.mat-dialog-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    max-width: 400px;
+    width: 100%;
+  }
+  /* custom-dialog.component.css */
+.mat-dialog-title {
+    color: #333333;
+    font-size: 20px;
+  }
+/* custom-dialog.component.css */
+.mat-dialog-actions {
+    justify-content: flex-end;
+  }
+  
+  .mat-dialog-actions button {
+    margin-left: 8px;
+    background-color: #4caf50;
+    color: #ffffff;
+  }
+  
+  .mat-dialog-actions button:hover {
+    background-color: #45a049;
+  }
+/* custom-dialog.component.css */
+@media screen and (max-width: 600px) {
+    .mat-dialog-container {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+/* custom-dialog.component.css */
+.mat-dialog-container {
+    transition: transform 0.3s ease-out;
+  }
+  
+  .mat-dialog-container.ng-enter,
+  .mat-dialog-container.ng-leave {
+    transform: scale(0.8);
+  }
+/* styles.css (or your global styles file) */
+.cdk-overlay-container {
+    z-index: 1000; /* Adjust the z-index as needed */
+  }
+                          
